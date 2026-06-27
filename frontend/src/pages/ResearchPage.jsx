@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import axios from 'axios'
+import { api as axios } from '../api'
 import {
   Search, Loader2, BookOpen, GitBranch,
   MessageSquare, Map, AlertCircle, Clock, X,
@@ -11,6 +11,7 @@ import {
 import Roadmap from '../components/Roadmap'
 import ChatInterface from '../components/ChatInterface'
 import KnowledgeGraph from '../components/KnowledgeGraph'
+
 
 const DIFFICULTY_COLORS = {
   beginner: { bg: 'rgba(34,197,94,0.12)', border: 'rgba(34,197,94,0.3)', text: '#22c55e' },

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, Bot, User, RefreshCw, ChevronDown, ChevronUp, Zap, Sparkles } from 'lucide-react'
-import axios from 'axios'
+import { api as axios } from '../api'
 
 const generateSuggestions = (topic) => [
   `What problem does ${topic} solve?`,
