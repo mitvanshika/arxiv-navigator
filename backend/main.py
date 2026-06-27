@@ -22,13 +22,13 @@ def get_llm():
     global llm_instance
     if llm_instance is None:
         from langchain_groq import ChatGroq
+        import os
         llm_instance = ChatGroq(
             model="llama-3.1-8b-instant",
-            api_key="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",
+            api_key=os.getenv("GROQ_API_KEY"),
             temperature=0
         )
     return llm_instance
-
 
 class SearchRequest(BaseModel):
     topic: str

@@ -5,12 +5,12 @@ import time
 
 def get_llm():
     from langchain_groq import ChatGroq
+    import os
     return ChatGroq(
         model="llama-3.1-8b-instant",
-        api_key="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",
+        api_key=os.getenv("GROQ_API_KEY"),
         temperature=0
     )
-
 
 def generate_topic_overview(llm, topic: str) -> dict:
     prompt = f"""You are explaining a machine learning topic to a smart 18-year-old student.
