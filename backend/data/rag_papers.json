@@ -1,0 +1,220 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2504.01346v4",
+    "title": "RAG over Tables: Hierarchical Memory Index, Multi-Stage Retrieval, and Benchmarking",
+    "authors": [
+      "Jiaru Zou",
+      "Dongqi Fu",
+      "Sirui Chen"
+    ],
+    "summary": "Retrieval-Augmented Generation (RAG) enhances Large Language Models (LLMs) by integrating them with an external knowledge base to improve the answer relevance and accuracy. In real-world scenarios, beyond pure text, a substantial amount of knowledge is stored in tables, and user questions often require retrieving answers that are distributed across multiple tables. Retrieving knowledge from a table corpora (i.e., various individual tables) for a question remains nascent, at least, for (i) how to understand intra- and inter-table knowledge effectively, (ii) how to filter unnecessary tables and how to retrieve the most relevant tables efficiently, (iii) how to prompt LLMs to infer over the retrieval, (iv) how to evaluate the corresponding performance in a realistic setting. Facing the above challenges, in this paper, we first propose a table-corpora-aware RAG framework, named T-RAG, which consists of the hierarchical memory index, multi-stage retrieval, and graph-aware prompting for effective and efficient table knowledge retrieval and inference. Further, we first develop a multi-table question answering benchmark named MultiTableQA, which spans 3 different task types, 57,193 tables, and 23,758 questions in total, and the sources are all from real-world scenarios. Based on MultiTableQA, we did the holistic comparison over table retrieval methods, RAG methods, and table-to-graph representation learning methods, where T-RAG shows the leading accuracy, recall, and running time performance. Also, under T-RAG, we evaluate the inference ability upgrade of different LLMs. Code and Data are available at https://github.com/jiaruzouu/T-RAG",
+    "pdf_url": "https://arxiv.org/pdf/2504.01346v4",
+    "published": "2025-04-02",
+    "categories": [
+      "cs.CL",
+      "cs.IR",
+      "cs.LG"
+    ],
+    "relevance_score": 10.0,
+    "relevance_reason": "directly about rag and tables"
+  },
+  {
+    "id": "http://arxiv.org/abs/2409.03708v2",
+    "title": "RAG based Question-Answering for Contextual Response Prediction System",
+    "authors": [
+      "Sriram Veturi",
+      "Saurabh Vaichal",
+      "Reshma Lal Jagadheesh"
+    ],
+    "summary": "Large Language Models (LLMs) have shown versatility in various Natural Language Processing (NLP) tasks, including their potential as effective question-answering systems. However, to provide precise and relevant information in response to specific customer queries in industry settings, LLMs require access to a comprehensive knowledge base to avoid hallucinations. Retrieval Augmented Generation (RAG) emerges as a promising technique to address this challenge. Yet, developing an accurate question-answering framework for real-world applications using RAG entails several challenges: 1) data availability issues, 2) evaluating the quality of generated content, and 3) the costly nature of human evaluation. In this paper, we introduce an end-to-end framework that employs LLMs with RAG capabilities for industry use cases. Given a customer query, the proposed system retrieves relevant knowledge documents and leverages them, along with previous chat history, to generate response suggestions for customer service agents in the contact centers of a major retail company. Through comprehensive automated and human evaluations, we show that this solution outperforms the current BERT-based algorithms in accuracy and relevance. Our findings suggest that RAG-based LLMs can be an excellent support to human customer service representatives by lightening their workload.",
+    "pdf_url": "https://arxiv.org/pdf/2409.03708v2",
+    "published": "2024-09-05",
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "relevance_score": 9.2,
+    "relevance_reason": "directly about rag and question-answering"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.25518v1",
+    "title": "Retrieval Augmented Generation (RAG) for Fintech: Agentic Design and Evaluation",
+    "authors": [
+      "Thomas Cook",
+      "Richard Osuagwu",
+      "Liman Tsatiashvili"
+    ],
+    "summary": "Retrieval-Augmented Generation (RAG) systems often face limitations in specialized domains such as fintech, where domain-specific ontologies, dense terminology, and acronyms complicate effective retrieval and synthesis. This paper introduces an agentic RAG architecture designed to address these challenges through a modular pipeline of specialized agents. The proposed system supports intelligent query reformulation, iterative sub-query decomposition guided by keyphrase extraction, contextual acronym resolution, and cross-encoder-based context re-ranking. We evaluate our approach against a standard RAG baseline using a curated dataset of 85 question--answer--reference triples derived from an enterprise fintech knowledge base. Experimental results demonstrate that the agentic RAG system outperforms the baseline in retrieval precision and relevance, albeit with increased latency. These findings suggest that structured, multi-agent methodologies offer a promising direction for enhancing retrieval robustness in complex, domain-specific settings.",
+    "pdf_url": "https://arxiv.org/pdf/2510.25518v1",
+    "published": "2025-10-29",
+    "categories": [
+      "cs.AI"
+    ],
+    "relevance_score": 8.4,
+    "relevance_reason": "directly about rag and fintech"
+  },
+  {
+    "id": "http://arxiv.org/abs/2511.22858v1",
+    "title": "RAG System for Supporting Japanese Litigation Procedures: Faithful Response Generation Complying with Legal Norms",
+    "authors": [
+      "Yuya Ishihara",
+      "Atsushi Keyaki",
+      "Hiroaki Yamada"
+    ],
+    "summary": "This study discusses the essential components that a Retrieval-Augmented Generation (RAG)-based LLM system should possess in order to support Japanese medical litigation procedures complying with legal norms. In litigation, expert commissioners, such as physicians, architects, accountants, and engineers, provide specialized knowledge to help judges clarify points of dispute. When considering the substitution of these expert roles with a RAG-based LLM system, the constraint of strict adherence to legal norms is imposed. Specifically, three requirements arise: (1) the retrieval module must retrieve appropriate external knowledge relevant to the disputed issues in accordance with the principle prohibiting the use of private knowledge, (2) the responses generated must originate from the context provided by the RAG and remain faithful to that context, and (3) the retrieval module must reference external knowledge with appropriate timestamps corresponding to the issues at hand. This paper discusses the design of a RAG-based LLM system that satisfies these requirements.",
+    "pdf_url": "https://arxiv.org/pdf/2511.22858v1",
+    "published": "2025-11-28",
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "relevance_score": 7.5,
+    "relevance_reason": "directly related to RAG in litigation procedures"
+  },
+  {
+    "id": "http://arxiv.org/abs/2106.11517v1",
+    "title": "Fine-tune the Entire RAG Architecture (including DPR retriever) for Question-Answering",
+    "authors": [
+      "Shamane Siriwardhana",
+      "Rivindu Weerasekera",
+      "Elliott Wen"
+    ],
+    "summary": "In this paper, we illustrate how to fine-tune the entire Retrieval Augment Generation (RAG) architecture in an end-to-end manner. We highlighted the main engineering challenges that needed to be addressed to achieve this objective. We also compare how end-to-end RAG architecture outperforms the original RAG architecture for the task of question answering. We have open-sourced our implementation in the HuggingFace Transformers library.",
+    "pdf_url": "https://arxiv.org/pdf/2106.11517v1",
+    "published": "2021-06-22",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "relevance_score": 6.7,
+    "relevance_reason": "directly related to fine-tuning RAG architecture"
+  },
+  {
+    "id": "http://arxiv.org/abs/2601.05264v1",
+    "title": "Engineering the RAG Stack: A Comprehensive Review of the Architecture and Trust Frameworks for Retrieval-Augmented Generation Systems",
+    "authors": [
+      "Dean Wampler",
+      "Dave Nielson",
+      "Alireza Seddighi"
+    ],
+    "summary": "This article provides a comprehensive systematic literature review of academic studies, industrial applications, and real-world deployments from 2018 to 2025, providing a practical guide and detailed overview of modern Retrieval-Augmented Generation (RAG) architectures. RAG offers a modular approach for integrating external knowledge without increasing the capacity of the model as LLM systems expand. Research and engineering practices have been fragmented as a result of the increasing diversity of RAG methodologies, which encompasses a variety of fusion mechanisms, retrieval strategies, and orchestration approaches. We provide quantitative assessment frameworks, analyze the implications for trust and alignment, and systematically consolidate existing RAG techniques into a unified taxonomy. This document is a practical framework for the deployment of resilient, secure, and domain-adaptable RAG systems, synthesizing insights from academic literature, industry reports, and technical implementation guides. It also functions as a technical reference.",
+    "pdf_url": "https://arxiv.org/pdf/2601.05264v1",
+    "published": "2025-11-07",
+    "categories": [
+      "cs.IR",
+      "cs.AI"
+    ],
+    "relevance_score": 5.9,
+    "relevance_reason": "comprehensive review of RAG systems"
+  },
+  {
+    "id": "http://arxiv.org/abs/2404.15939v3",
+    "title": "Telco-RAG: Navigating the Challenges of Retrieval-Augmented Language Models for Telecommunications",
+    "authors": [
+      "Andrei-Laurentiu Bornea",
+      "Fadhel Ayed",
+      "Antonio De Domenico"
+    ],
+    "summary": "The application of Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems in the telecommunication domain presents unique challenges, primarily due to the complex nature of telecom standard documents and the rapid evolution of the field. The paper introduces Telco-RAG, an open-source RAG framework designed to handle the specific needs of telecommunications standards, particularly 3rd Generation Partnership Project (3GPP) documents. Telco-RAG addresses the critical challenges of implementing a RAG pipeline on highly technical content, paving the way for applying LLMs in telecommunications and offering guidelines for RAG implementation in other technical domains.",
+    "pdf_url": "https://arxiv.org/pdf/2404.15939v3",
+    "published": "2024-04-24",
+    "categories": [
+      "cs.IR",
+      "eess.SP"
+    ],
+    "relevance_score": 5.1,
+    "relevance_reason": "directly related to RAG in telecommunications"
+  },
+  {
+    "id": "http://arxiv.org/abs/2402.01717v1",
+    "title": "From RAG to QA-RAG: Integrating Generative AI for Pharmaceutical Regulatory Compliance Process",
+    "authors": [
+      "Jaewoong Kim",
+      "Moohong Min"
+    ],
+    "summary": "Regulatory compliance in the pharmaceutical industry entails navigating through complex and voluminous guidelines, often requiring significant human resources. To address these challenges, our study introduces a chatbot model that utilizes generative AI and the Retrieval Augmented Generation (RAG) method. This chatbot is designed to search for guideline documents relevant to the user inquiries and provide answers based on the retrieved guidelines. Recognizing the inherent need for high reliability in this domain, we propose the Question and Answer Retrieval Augmented Generation (QA-RAG) model. In comparative experiments, the QA-RAG model demonstrated a significant improvement in accuracy, outperforming all other baselines including conventional RAG methods. This paper details QA-RAG's structure and performance evaluation, emphasizing its potential for the regulatory compliance domain in the pharmaceutical industry and beyond. We have made our work publicly available for further research and development.",
+    "pdf_url": "https://arxiv.org/pdf/2402.01717v1",
+    "published": "2024-01-26",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "relevance_score": 4.3,
+    "relevance_reason": "uses RAG for a specific application"
+  },
+  {
+    "id": "http://arxiv.org/abs/2511.07328v2",
+    "title": "Q-RAG: Long Context Multi-step Retrieval via Value-based Embedder Training",
+    "authors": [
+      "Artyom Sorokin",
+      "Nazar Buzun",
+      "Alexander Anokhin"
+    ],
+    "summary": "Retrieval-Augmented Generation (RAG) methods enhance LLM performance by efficiently filtering relevant context for LLMs, reducing hallucinations and inference cost. However, most existing RAG methods focus on single-step retrieval, which is often insufficient for answering complex questions that require multi-step search. Recently, multi-step retrieval approaches have emerged, typically involving the fine-tuning of small LLMs to perform multi-step retrieval. This type of fine-tuning is highly resource-intensive and does not enable the use of larger LLMs. In this work, we propose Q-RAG, a novel approach that fine-tunes the Embedder model for multi-step retrieval using reinforcement learning (RL). Q-RAG offers a competitive, resource-efficient alternative to existing multi-step retrieval methods for open-domain question answering and achieves state-of-the-art results on the popular long-context benchmarks BabiLong and RULER for contexts up to 10M tokens. Code is available at https://github.com/griver/Q-RAG",
+    "pdf_url": "https://arxiv.org/pdf/2511.07328v2",
+    "published": "2025-11-10",
+    "categories": [
+      "cs.LG",
+      "cs.IR"
+    ],
+    "relevance_score": 3.5,
+    "relevance_reason": "improves RAG for complex questions"
+  },
+  {
+    "id": "http://arxiv.org/abs/2210.02627v1",
+    "title": "Improving the Domain Adaptation of Retrieval Augmented Generation (RAG) Models for Open Domain Question Answering",
+    "authors": [
+      "Shamane Siriwardhana",
+      "Rivindu Weerasekera",
+      "Elliott Wen"
+    ],
+    "summary": "Retrieval Augment Generation (RAG) is a recent advancement in Open-Domain Question Answering (ODQA). RAG has only been trained and explored with a Wikipedia-based external knowledge base and is not optimized for use in other specialized domains such as healthcare and news. In this paper, we evaluate the impact of joint training of the retriever and generator components of RAG for the task of domain adaptation in ODQA. We propose \\textit{RAG-end2end}, an extension to RAG, that can adapt to a domain-specific knowledge base by updating all components of the external knowledge base during training. In addition, we introduce an auxiliary training signal to inject more domain-specific knowledge. This auxiliary signal forces \\textit{RAG-end2end} to reconstruct a given sentence by accessing the relevant information from the external knowledge base. Our novel contribution is unlike RAG, RAG-end2end does joint training of the retriever and generator for the end QA task and domain adaptation. We evaluate our approach with datasets from three domains: COVID-19, News, and Conversations, and achieve significant performance improvements compared to the original RAG model. Our work has been open-sourced through the Huggingface Transformers library, attesting to our work's credibility and technical consistency.",
+    "pdf_url": "https://arxiv.org/pdf/2210.02627v1",
+    "published": "2022-10-06",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "relevance_score": 2.6,
+    "relevance_reason": "directly related to RAG and its application in ODQA"
+  },
+  {
+    "id": "http://arxiv.org/abs/2510.22344v1",
+    "title": "FAIR-RAG: Faithful Adaptive Iterative Refinement for Retrieval-Augmented Generation",
+    "authors": [
+      "Mohammad Aghajani Asl",
+      "Majid Asgari-Bidhendi",
+      "Behrooz Minaei-Bidgoli"
+    ],
+    "summary": "While Retrieval-Augmented Generation (RAG) mitigates hallucination and knowledge staleness in Large Language Models (LLMs), existing frameworks often falter on complex, multi-hop queries that require synthesizing information from disparate sources. Current advanced RAG methods, employing iterative or adaptive strategies, lack a robust mechanism to systematically identify and fill evidence gaps, often propagating noise or failing to gather a comprehensive context. We introduce FAIR-RAG, a novel agentic framework that transforms the standard RAG pipeline into a dynamic, evidence-driven reasoning process. At its core is an Iterative Refinement Cycle governed by a module we term Structured Evidence Assessment (SEA). The SEA acts as an analytical gating mechanism: it deconstructs the initial query into a checklist of required findings and audits the aggregated evidence to identify confirmed facts and, critically, explicit informational gaps. These gaps provide a precise signal to an Adaptive Query Refinement agent, which generates new, targeted sub-queries to retrieve missing information. This cycle repeats until the evidence is verified as sufficient, ensuring a comprehensive context for a final, strictly faithful generation. We conducted experiments on challenging multi-hop QA benchmarks, including HotpotQA, 2WikiMultiHopQA, and MusiQue. In a unified experimental setup, FAIR-RAG significantly outperforms strong baselines. On HotpotQA, it achieves an F1-score of 0.453 -- an absolute improvement of 8.3 points over the strongest iterative baseline -- establishing a new state-of-the-art for this class of methods on these benchmarks. Our work demonstrates that a structured, evidence-driven refinement process with explicit gap analysis is crucial for unlocking reliable and accurate reasoning in advanced RAG systems for complex, knowledge-intensive tasks.",
+    "pdf_url": "https://arxiv.org/pdf/2510.22344v1",
+    "published": "2025-10-25",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.IR"
+    ],
+    "relevance_score": 1.8,
+    "relevance_reason": "directly related to RAG and its limitations"
+  },
+  {
+    "id": "http://arxiv.org/abs/2412.07420v1",
+    "title": "RAG-based Question Answering over Heterogeneous Data and Text",
+    "authors": [
+      "Philipp Christmann",
+      "Gerhard Weikum"
+    ],
+    "summary": "This article presents the QUASAR system for question answering over unstructured text, structured tables, and knowledge graphs, with unified treatment of all sources. The system adopts a RAG-based architecture, with a pipeline of evidence retrieval followed by answer generation, with the latter powered by a moderate-sized language model. Additionally and uniquely, QUASAR has components for question understanding, to derive crisper input for evidence retrieval, and for re-ranking and filtering the retrieved evidence before feeding the most informative pieces into the answer generation. Experiments with three different benchmarks demonstrate the high answering quality of our approach, being on par with or better than large GPT models, while keeping the computational cost and energy consumption orders of magnitude lower.",
+    "pdf_url": "https://arxiv.org/pdf/2412.07420v1",
+    "published": "2024-12-10",
+    "categories": [
+      "cs.CL",
+      "cs.IR"
+    ],
+    "relevance_score": 1.0,
+    "relevance_reason": "directly related to RAG and its application in question answering over heterogeneous data"
+  }
+]

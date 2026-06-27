@@ -1,0 +1,15 @@
+{
+  "what_is_it": "RAG (Reinforcement Learning with Augmented Auxiliary Tasks) is a technique used in deep learning to improve the performance of reinforcement learning agents by adding auxiliary tasks that help them learn more efficiently. This is done by training the agent on multiple tasks simultaneously, where the main task is the primary goal and the auxiliary tasks are secondary objectives that help the agent learn useful skills. By doing so, RAG enables the agent to learn more robust and generalizable policies.",
+  "core_problem": "The core problem RAG solves is how to improve the sample efficiency and robustness of reinforcement learning agents by providing them with additional learning objectives.",
+  "key_concepts": [
+    "Reinforcement learning",
+    "Deep learning",
+    "Auxiliary tasks",
+    "Sample efficiency",
+    "Robustness",
+    "Policy learning"
+  ],
+  "why_it_matters": "RAG unlocks the capability to train reinforcement learning agents that can learn complex tasks more efficiently and robustly, leading to better performance in real-world applications.",
+  "analogy": "RAG can be thought of as a personal trainer that helps an athlete learn new skills by providing them with additional exercises and drills that complement their main training regimen.",
+  "how_to_use": "RAG can be used in real-world applications such as training robots to perform complex tasks like assembly or manipulation, training autonomous vehicles to navigate through challenging environments, and training game-playing agents to learn new strategies and tactics."
+}

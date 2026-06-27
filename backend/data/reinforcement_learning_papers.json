@@ -1,0 +1,216 @@
+[
+  {
+    "id": "http://arxiv.org/abs/2602.12375v1",
+    "title": "Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning",
+    "authors": [
+      "Abdul Wahab",
+      "Raksha Kumaraswamy",
+      "Martha White"
+    ],
+    "summary": "Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We show that VBE outperforms Bootstrap DQN and two reward bonus approaches (RND and ACB) on several classic environments used to test exploration and provide demonstrative experiments that it can scale easily to more complex environments like Atari.",
+    "pdf_url": "https://arxiv.org/pdf/2602.12375v1",
+    "published": "2026-02-12",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "relevance_score": 10.0,
+    "relevance_reason": "directly about reinforcement learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/2301.08028v4",
+    "title": "A Tutorial on Meta-Reinforcement Learning",
+    "authors": [
+      "Jacob Beck",
+      "Risto Vuorio",
+      "Evan Zheran Liu"
+    ],
+    "summary": "While deep reinforcement learning (RL) has fueled multiple high-profile successes in machine learning, it is held back from more widespread adoption by its often poor data efficiency and the limited generality of the policies it produces. A promising approach for alleviating these limitations is to cast the development of better RL algorithms as a machine learning problem itself in a process called meta-RL. Meta-RL is most commonly studied in a problem setting where, given a distribution of tasks, the goal is to learn a policy that is capable of adapting to any new task from the task distribution with as little data as possible. In this survey, we describe the meta-RL problem setting in detail as well as its major variations. We discuss how, at a high level, meta-RL research can be clustered based on the presence of a task distribution and the learning budget available for each individual task. Using these clusters, we then survey meta-RL algorithms and applications. We conclude by presenting the open problems on the path to making meta-RL part of the standard toolbox for a deep RL practitioner.",
+    "pdf_url": "https://arxiv.org/pdf/2301.08028v4",
+    "published": "2023-01-19",
+    "categories": [
+      "cs.LG"
+    ],
+    "relevance_score": 9.2,
+    "relevance_reason": "directly about reinforcement learning, but with a specific focus on meta-reinforcement learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/1809.09501v1",
+    "title": "Anderson Acceleration for Reinforcement Learning",
+    "authors": [
+      "Matthieu Geist",
+      "Bruno Scherrer"
+    ],
+    "summary": "Anderson acceleration is an old and simple method for accelerating the computation of a fixed point. However, as far as we know and quite surprisingly, it has never been applied to dynamic programming or reinforcement learning. In this paper, we explain briefly what Anderson acceleration is and how it can be applied to value iteration, this being supported by preliminary experiments showing a significant speed up of convergence, that we critically discuss. We also discuss how this idea could be applied more generally to (deep) reinforcement learning.",
+    "pdf_url": "https://arxiv.org/pdf/1809.09501v1",
+    "published": "2018-09-25",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "relevance_score": 8.4,
+    "relevance_reason": "directly about reinforcement learning, but with a specific focus on acceleration methods"
+  },
+  {
+    "id": "http://arxiv.org/abs/1909.11939v6",
+    "title": "MERL: Multi-Head Reinforcement Learning",
+    "authors": [
+      "Yannis Flet-Berliac",
+      "Philippe Preux"
+    ],
+    "summary": "A common challenge in reinforcement learning is how to convert the agent's interactions with an environment into fast and robust learning. For instance, earlier work makes use of domain knowledge to improve existing reinforcement learning algorithms in complex tasks. While promising, previously acquired knowledge is often costly and challenging to scale up. Instead, we decide to consider problem knowledge with signals from quantities relevant to solve any task, e.g., self-performance assessment and accurate expectations. $\\mathcal{V}^{ex}$ is such a quantity. It is the fraction of variance explained by the value function $V$ and measures the discrepancy between $V$ and the returns. Taking advantage of $\\mathcal{V}^{ex}$, we propose MERL, a general framework for structuring reinforcement learning by injecting problem knowledge into policy gradient updates. As a result, the agent is not only optimized for a reward but learns using problem-focused quantities provided by MERL, applicable out-of-the-box to any task. In this paper: (a) We introduce and define MERL, the multi-head reinforcement learning framework we use throughout this work. (b) We conduct experiments across a variety of standard benchmark environments, including 9 continuous control tasks, where results show improved performance. (c) We demonstrate that MERL also improves transfer learning on a set of challenging pixel-based tasks. (d) We ponder how MERL tackles the problem of reward sparsity and better conditions the feature space of reinforcement learning agents.",
+    "pdf_url": "https://arxiv.org/pdf/1909.11939v6",
+    "published": "2019-09-26",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "relevance_score": 7.5,
+    "relevance_reason": "directly about reinforcement learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/1911.04947v2",
+    "title": "Accelerating Training in Pommerman with Imitation and Reinforcement Learning",
+    "authors": [
+      "Hardik Meisheri",
+      "Omkar Shelke",
+      "Richa Verma"
+    ],
+    "summary": "The Pommerman simulation was recently developed to mimic the classic Japanese game Bomberman, and focuses on competitive gameplay in a multi-agent setting. We focus on the 2$\\times$2 team version of Pommerman, developed for a competition at NeurIPS 2018. Our methodology involves training an agent initially through imitation learning on a noisy expert policy, followed by a proximal-policy optimization (PPO) reinforcement learning algorithm. The basic PPO approach is modified for stable transition from the imitation learning phase through reward shaping, action filters based on heuristics, and curriculum learning. The proposed methodology is able to beat heuristic and pure reinforcement learning baselines with a combined 100,000 training games, significantly faster than other non-tree-search methods in literature. We present results against multiple agents provided by the developers of the simulation, including some that we have enhanced. We include a sensitivity analysis over different parameters, and highlight undesirable effects of some strategies that initially appear promising. Since Pommerman is a complex multi-agent competitive environment, the strategies developed here provide insights into several real-world problems with characteristics such as partial observability, decentralized execution (without communication), and very sparse and delayed rewards.",
+    "pdf_url": "https://arxiv.org/pdf/1911.04947v2",
+    "published": "2019-11-12",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "relevance_score": 6.7,
+    "relevance_reason": "directly about reinforcement learning and imitation learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/1807.04439v1",
+    "title": "Will it Blend? Composing Value Functions in Reinforcement Learning",
+    "authors": [
+      "Benjamin van Niekerk",
+      "Steven James",
+      "Adam Earle"
+    ],
+    "summary": "An important property for lifelong-learning agents is the ability to combine existing skills to solve unseen tasks. In general, however, it is unclear how to compose skills in a principled way. We provide a \"recipe\" for optimal value function composition in entropy-regularised reinforcement learning (RL) and then extend this to the standard RL setting. Composition is demonstrated in a video game environment, where an agent with an existing library of policies is able to solve new tasks without the need for further learning.",
+    "pdf_url": "https://arxiv.org/pdf/1807.04439v1",
+    "published": "2018-07-12",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "relevance_score": 5.9,
+    "relevance_reason": "directly about reinforcement learning and value function composition"
+  },
+  {
+    "id": "http://arxiv.org/abs/2211.03994v1",
+    "title": "Reinforcement Learning with Stepwise Fairness Constraints",
+    "authors": [
+      "Zhun Deng",
+      "He Sun",
+      "Zhiwei Steven Wu"
+    ],
+    "summary": "AI methods are used in societally important settings, ranging from credit to employment to housing, and it is crucial to provide fairness in regard to algorithmic decision making. Moreover, many settings are dynamic, with populations responding to sequential decision policies. We introduce the study of reinforcement learning (RL) with stepwise fairness constraints, requiring group fairness at each time step. Our focus is on tabular episodic RL, and we provide learning algorithms with strong theoretical guarantees in regard to policy optimality and fairness violation. Our framework provides useful tools to study the impact of fairness constraints in sequential settings and brings up new challenges in RL.",
+    "pdf_url": "https://arxiv.org/pdf/2211.03994v1",
+    "published": "2022-11-08",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CY"
+    ],
+    "relevance_score": 5.1,
+    "relevance_reason": "directly about reinforcement learning and fairness constraints"
+  },
+  {
+    "id": "http://arxiv.org/abs/1911.09615v1",
+    "title": "Sample-Efficient Reinforcement Learning with Maximum Entropy Mellowmax Episodic Control",
+    "authors": [
+      "Marta Sarrico",
+      "Kai Arulkumaran",
+      "Andrea Agostinelli"
+    ],
+    "summary": "Deep networks have enabled reinforcement learning to scale to more complex and challenging domains, but these methods typically require large quantities of training data. An alternative is to use sample-efficient episodic control methods: neuro-inspired algorithms which use non-/semi-parametric models that predict values based on storing and retrieving previously experienced transitions. One way to further improve the sample efficiency of these approaches is to use more principled exploration strategies. In this work, we therefore propose maximum entropy mellowmax episodic control (MEMEC), which samples actions according to a Boltzmann policy with a state-dependent temperature. We demonstrate that MEMEC outperforms other uncertainty- and softmax-based exploration methods on classic reinforcement learning environments and Atari games, achieving both more rapid learning and higher final rewards.",
+    "pdf_url": "https://arxiv.org/pdf/1911.09615v1",
+    "published": "2019-11-21",
+    "categories": [
+      "cs.LG",
+      "cs.NE",
+      "stat.ML"
+    ],
+    "relevance_score": 4.3,
+    "relevance_reason": "directly about reinforcement learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/2004.06277v1",
+    "title": "A Demonstration of Issues with Value-Based Multiobjective Reinforcement Learning Under Stochastic State Transitions",
+    "authors": [
+      "Peter Vamplew",
+      "Cameron Foale",
+      "Richard Dazeley"
+    ],
+    "summary": "We report a previously unidentified issue with model-free, value-based approaches to multiobjective reinforcement learning in the context of environments with stochastic state transitions. An example multiobjective Markov Decision Process (MOMDP) is used to demonstrate that under such conditions these approaches may be unable to discover the policy which maximises the Scalarised Expected Return, and in fact may converge to a Pareto-dominated solution. We discuss several alternative methods which may be more suitable for maximising SER in MOMDPs with stochastic transitions.",
+    "pdf_url": "https://arxiv.org/pdf/2004.06277v1",
+    "published": "2020-04-14",
+    "categories": [
+      "cs.LG",
+      "cs.MA",
+      "stat.ML"
+    ],
+    "relevance_score": 3.5,
+    "relevance_reason": "specifically discusses reinforcement learning under stochastic state transitions"
+  },
+  {
+    "id": "http://arxiv.org/abs/2004.08600v1",
+    "title": "Time Adaptive Reinforcement Learning",
+    "authors": [
+      "Chris Reinke"
+    ],
+    "summary": "Reinforcement learning (RL) allows to solve complex tasks such as Go often with a stronger performance than humans. However, the learned behaviors are usually fixed to specific tasks and unable to adapt to different contexts. Here we consider the case of adapting RL agents to different time restrictions, such as finishing a task with a given time limit that might change from one task execution to the next. We define such problems as Time Adaptive Markov Decision Processes and introduce two model-free, value-based algorithms: the Independent Gamma-Ensemble and the n-Step Ensemble. In difference to classical approaches, they allow a zero-shot adaptation between different time restrictions. The proposed approaches represent general mechanisms to handle time adaptive tasks making them compatible with many existing RL methods, algorithms, and scenarios.",
+    "pdf_url": "https://arxiv.org/pdf/2004.08600v1",
+    "published": "2020-04-18",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "relevance_score": 2.6,
+    "relevance_reason": "directly about adapting reinforcement learning agents to different time restrictions"
+  },
+  {
+    "id": "http://arxiv.org/abs/1907.04543v4",
+    "title": "An Optimistic Perspective on Offline Reinforcement Learning",
+    "authors": [
+      "Rishabh Agarwal",
+      "Dale Schuurmans",
+      "Mohammad Norouzi"
+    ],
+    "summary": "Off-policy reinforcement learning (RL) using a fixed offline dataset of logged interactions is an important consideration in real world applications. This paper studies offline RL using the DQN replay dataset comprising the entire replay experience of a DQN agent on 60 Atari 2600 games. We demonstrate that recent off-policy deep RL algorithms, even when trained solely on this fixed dataset, outperform the fully trained DQN agent. To enhance generalization in the offline setting, we present Random Ensemble Mixture (REM), a robust Q-learning algorithm that enforces optimal Bellman consistency on random convex combinations of multiple Q-value estimates. Offline REM trained on the DQN replay dataset surpasses strong RL baselines. Ablation studies highlight the role of offline dataset size and diversity as well as the algorithm choice in our positive results. Overall, the results here present an optimistic view that robust RL algorithms trained on sufficiently large and diverse offline datasets can lead to high quality policies. The DQN replay dataset can serve as an offline RL benchmark and is open-sourced.",
+    "pdf_url": "https://arxiv.org/pdf/1907.04543v4",
+    "published": "2019-07-10",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "relevance_score": 1.8,
+    "relevance_reason": "directly about offline reinforcement learning"
+  },
+  {
+    "id": "http://arxiv.org/abs/1701.07274v6",
+    "title": "Deep Reinforcement Learning: An Overview",
+    "authors": [
+      "Yuxi Li"
+    ],
+    "summary": "We give an overview of recent exciting achievements of deep reinforcement learning (RL). We discuss six core elements, six important mechanisms, and twelve applications. We start with background of machine learning, deep learning and reinforcement learning. Next we discuss core RL elements, including value function, in particular, Deep Q-Network (DQN), policy, reward, model, planning, and exploration. After that, we discuss important mechanisms for RL, including attention and memory, unsupervised learning, transfer learning, multi-agent RL, hierarchical RL, and learning to learn. Then we discuss various applications of RL, including games, in particular, AlphaGo, robotics, natural language processing, including dialogue systems, machine translation, and text generation, computer vision, neural architecture design, business management, finance, healthcare, Industry 4.0, smart grid, intelligent transportation systems, and computer systems. We mention topics not reviewed yet, and list a collection of RL resources. After presenting a brief summary, we close with discussions.\n  Please see Deep Reinforcement Learning, arXiv:1810.06339, for a significant update.",
+    "pdf_url": "https://arxiv.org/pdf/1701.07274v6",
+    "published": "2017-01-25",
+    "categories": [
+      "cs.LG"
+    ],
+    "relevance_score": 1.0,
+    "relevance_reason": "overview of deep reinforcement learning"
+  }
+]

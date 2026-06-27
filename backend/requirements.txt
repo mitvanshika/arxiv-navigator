@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain-google-genai
+google-genai
+faiss-cpu
+numpy
+arxiv
+pymupdf
+tqdm
+networkx
+pyvis
+pydantic
+requests

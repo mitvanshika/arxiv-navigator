@@ -1,0 +1,12 @@
+arxiv
+pymupdf
+langchain
+langchain-community
+langchain-openai
+faiss-cpu
+openai
+networkx
+pyvis
+python-dotenv
+tqdm
+requests
