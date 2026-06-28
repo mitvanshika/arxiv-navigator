@@ -6,7 +6,8 @@ import {
   Search, Loader2, BookOpen, GitBranch,
   MessageSquare, Map, AlertCircle, Clock, X,
   ChevronRight, Lightbulb, Wrench, BarChart2,
-  Zap, Brain, Calendar, Users, ExternalLink
+  Zap, Brain, Calendar, Users, ExternalLink,
+  Download
 } from 'lucide-react'
 import Roadmap from '../components/Roadmap'
 import ChatInterface from '../components/ChatInterface'
@@ -219,6 +220,7 @@ export default function ResearchPage() {
     } catch { return [] }
   })
   const [showHistory, setShowHistory] = useState(false)
+  const [exporting, setExporting] = useState(false)   // ← NEW
 
   const STEPS = [
     'Fetching papers from ArXiv',
@@ -227,9 +229,12 @@ export default function ResearchPage() {
     'Building knowledge graph',
   ]
 
-  useEffect(() => {
-    if (initialTopic) runPipeline(initialTopic)
-  }, [])
+ useEffect(() => {
+  if (initialTopic) {
+    saveToHistory(initialTopic)
+    runPipeline(initialTopic)
+  }
+}, [])
 
   useEffect(() => {
     if (filter === 'all') {
@@ -301,6 +306,36 @@ export default function ResearchPage() {
     navigate(`/research?topic=${encodeURIComponent(inputTopic.trim())}`)
     runPipeline(inputTopic.trim())
   }
+
+  // ── NEW: Download Report handler ─────────────────────────────────────────
+  const handleDownloadReport = async () => {
+    if (!papers || papers.length === 0) return
+    setExporting(true)
+    try {
+      const response = await axios.post(
+        '/api/export-pdf',
+        {
+          topic,
+          overview: overview ?? {},
+          papers,
+          reading_path: [],
+        },
+        { responseType: 'blob' }
+      )
+      const url = URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }))
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `arxiv-report-${topic.replace(/\s+/g, '-')}.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch (e) {
+      console.error('PDF export failed', e)
+      alert('PDF export failed. Check that the backend is running.')
+    } finally {
+      setExporting(false)
+    }
+  }
+  // ────────────────────────────────────────────────────────────────────────
 
   return (
     <div className="relative z-10 min-h-screen pt-20 pb-6 px-4 flex flex-col">
@@ -388,16 +423,32 @@ export default function ResearchPage() {
 
         {papers.length > 0 && (
           <>
-            <div className="flex gap-1 mb-4 p-1 rounded-xl w-fit"
-              style={{ background: 'rgba(7,20,40,0.8)', border: '1px solid rgba(201,168,76,0.1)' }}>
-              {TABS.map(tab => (
-                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    activeTab === tab.id ? 'text-navy-950 bg-gold-400' : 'text-gray-500 hover:text-gray-300'
-                  }`}>
-                  <tab.icon size={14} />{tab.label}
-                </button>
-              ))}
+            {/* ── Tabs row + Download Report button side by side ── */}
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex gap-1 p-1 rounded-xl w-fit"
+                style={{ background: 'rgba(7,20,40,0.8)', border: '1px solid rgba(201,168,76,0.1)' }}>
+                {TABS.map(tab => (
+                  <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      activeTab === tab.id ? 'text-navy-950 bg-gold-400' : 'text-gray-500 hover:text-gray-300'
+                    }`}>
+                    <tab.icon size={14} />{tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* ── NEW: Download Report button ── */}
+              <button
+                onClick={handleDownloadReport}
+                disabled={exporting || status === 'loading'}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.35)', color: '#c9a84c' }}
+              >
+                {exporting
+                  ? <Loader2 size={14} className="animate-spin" />
+                  : <Download size={14} />}
+                {exporting ? 'Generating…' : 'Download Report'}
+              </button>
             </div>
 
             <AnimatePresence mode="wait">

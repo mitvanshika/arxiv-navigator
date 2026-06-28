@@ -10,3 +10,5 @@ pyvis
 python-dotenv
 tqdm
 requests
+reportlab==4.2.2
+python-dotenv==1.0.1

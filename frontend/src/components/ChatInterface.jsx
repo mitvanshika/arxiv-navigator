@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Send, Bot, User, RefreshCw, ChevronDown, ChevronUp, Zap, Sparkles } from 'lucide-react'
 import { api as axios } from '../api'
+import FeedbackButtons from "./FeedbackButtons";
 
 const generateSuggestions = (topic) => [
   `What problem does ${topic} solve?`,
@@ -208,6 +209,17 @@ export default function ChatInterface({ topic, papers = [] }) {
                     )}
                   </div>
                 )}
+
+                {/* ── Feedback buttons — only on assistant messages after the first one ── */}
+                {msg.role === 'assistant' && i > 0 && (
+                  <FeedbackButtons
+                    topic={topic}
+                    question={messages[i - 1]?.content ?? ''}
+                    answer={msg.content}
+                    sources={msg.sources ?? []}
+                  />
+                )}
+
               </div>
             </motion.div>
           ))}

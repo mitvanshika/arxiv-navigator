@@ -3,10 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os, json, pickle
 from dotenv import load_dotenv
-
 load_dotenv()
+from feedback_routes import router as feedback_router
+
+
 
 app = FastAPI(title="ArXiv Navigator API")
+app.include_router(feedback_router)
 
 app.add_middleware(
     CORSMiddleware,
