@@ -51,6 +51,14 @@ def fetch_papers(topic: str, max_papers: int = 12) -> list[dict]:
     print(f"✅ Kept top {len(ranked)} most relevant papers")
     return ranked
 
+def save_papers(papers: list[dict], topic: str) -> str:
+    """Save paper metadata to a JSON file."""
+    os.makedirs("data", exist_ok=True)
+    filename = f"data/{topic.strip().lower().replace(' ', '_')}_papers.json"
+    with open(filename, "w") as f:
+        json.dump(papers, f, indent=2)
+    print(f"💾 Saved to {filename}")
+    return filename
 
 def parse_arxiv_xml(xml_text: str) -> list[dict]:
     ns = {
