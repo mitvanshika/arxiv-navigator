@@ -1,5 +1,6 @@
 arxiv
 pymupdf
+langchain-groq
 langchain
 langchain-community
 langchain-openai
