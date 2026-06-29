@@ -5,10 +5,9 @@ langchain-google-genai
 google-genai
 faiss-cpu
 numpy
-arxiv
 pymupdf
 tqdm
 networkx
 pyvis
 pydantic
-requestslangchain-groq
+langchain-groq
