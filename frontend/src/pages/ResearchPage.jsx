@@ -306,36 +306,36 @@ export default function ResearchPage() {
     navigate(`/research?topic=${encodeURIComponent(inputTopic.trim())}`)
     runPipeline(inputTopic.trim())
   }
-
-  // ── NEW: Download Report handler ─────────────────────────────────────────
-  const handleDownloadReport = async () => {
-    if (!papers || papers.length === 0) return
-    setExporting(true)
-    try {
-      const response = await axios.post(
-        '/api/export-pdf',
-        {
-          topic,
-          overview: overview ?? {},
-          papers,
-          reading_path: [],
-        },
-        { responseType: 'blob' }
-      )
-      const url = URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }))
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `arxiv-report-${topic.replace(/\s+/g, '-')}.pdf`
-      a.click()
-      URL.revokeObjectURL(url)
-    } catch (e) {
-      console.error('PDF export failed', e)
-      alert('PDF export failed. Check that the backend is running.')
-    } finally {
-      setExporting(false)
-    }
+const handleDownloadReport = async () => {
+  if (!papers || papers.length === 0) return
+  setExporting(true)
+  try {
+    const API_URL = import.meta.env.VITE_API_URL || ''
+    const response = await fetch(`${API_URL}/api/export-pdf`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        topic,
+        overview: overview ?? {},
+        papers,
+        reading_path: [],
+      }),
+    })
+    if (!response.ok) throw new Error(`Server error: ${response.status}`)
+    const blob = await response.blob()
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `arxiv-report-${topic.replace(/\s+/g, '-')}.pdf`
+    a.click()
+    URL.revokeObjectURL(url)
+  } catch (e) {
+    console.error('PDF export failed', e)
+    alert('PDF export failed. Check that the backend is running.')
+  } finally {
+    setExporting(false)
   }
-  // ────────────────────────────────────────────────────────────────────────
+}
 
   return (
     <div className="relative z-10 min-h-screen pt-20 pb-6 px-4 flex flex-col">
